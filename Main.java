@@ -4,33 +4,58 @@ public class Main
 {
   public static void main(String[] args)
   {
-    // TODO: Make an array of doubles, and test your sumArray method
+    double[] arr = {2.0, 2.1, 9.6, 7.5, 4.3};
+    System.out.println(sumArray(arr));
 
-    // TODO: Make an array of Strings, and test your averageLength method
+    String[] str = {"Pee", "Pee", "Henry"};
+    System.out.println(averageLength(str));
 
-    // TODO: Make an array of ints, and test your arrayMax method
+    int[] num = {2, 4, 3, 5, 2, 7, 1, 9, 6};
+    System.out.println(arrayMax(num));
 
-    // TODO: Make an array of Strings as well as a target, and test your linearSearch method
+    System.out.println(linearSearch(str, "Henry"));
+    System.out.println(linearSearch(str, "Bill"));
   }
 
 
   public static double sumArray(double[] arr)
   {
-    return 0.0;
+    int sum = 0; 
+    for (double num : arr){
+      sum += num;
+    }
+    return sum;
   }
 
   public static double averageLength(String[] arr)
   {
-    return 0.0;
+    double avg = 0.0;
+    int sum = 0;
+    for (int i = 0; i < arr.length; i++){
+      sum += arr[i].length();
+    }
+    avg = ((double) sum ) / arr.length;
+    return avg;
   }
 
   public static int arrayMax(int[] arr)
   {
-    return Integer.MIN_VALUE;
+    int max = 0;
+    for (int num : arr){
+      if (num > max){
+        max = num;
+      }
+    }
+    return max;
   }
 
-  public static boolean linearSearch(String[] arr)
+  public static boolean linearSearch(String[] arr, String target)
   {
+    for (int i = 0; i < arr.length; i++){
+      if (arr[i].equals(target)){
+        return true;
+      }
+    }
     return false;
   }
 }
